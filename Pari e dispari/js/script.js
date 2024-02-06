@@ -12,7 +12,7 @@ function scegliPariODispari() {
     let choice = prompt("Cosa scegli? PARI o DISPARI... ");
 
     // stampiamo in pagina la scelta dell'utente
-    document.querySelector("#user-choice").innerHTML = `Hai scelto ${choice}`;
+    document.querySelector("#user-choice").innerHTML = `Hai scelto "${choice}"`;
 
     // controlliamo che l'utente abbia scritto pari o dispari
     while (choice !== 'pari' && choice !== 'dispari') {
@@ -26,11 +26,8 @@ function scegliPariODispari() {
 // creiamo una funzione per far scegliere all'utente, tramite prompt, un numero da 1 a 5
 function inserisciNumero() {
 
-    // cambio la visualizzazione della user-number dove vengono mostrati i dadi
+    // cambio la visualizzazione della user-number per far visualizzare il numero scelto dall'utente
     document.querySelector(".user-number").style.display = "flex";
-
-    // cambio la visualizzazione della computer-number dove vengono mostrati i dadi
-    document.querySelector(".computer-number").style.display = "flex";
 
     const number = parseInt(prompt("Scegli un numero da 1 a 5... "));
 
@@ -77,11 +74,11 @@ function gioca() {
     // richiamo la funzione del numero casuale genarato dal computer
     let computerNumber = generaNumero();
 
-    // facciamo corrispondere il numero random generato al numero del dado
-    document.querySelector("#computerOutput img").src = `./img/${computerNumber}.jpg`;
+    // cambio la visualizzazione della computer-number per far visualizzare il numero generato dal computer
+    document.querySelector(".computer-number").style.display = "flex";
 
-     // cambio la visualizzazione della computer-number dove vengono mostrati i dadi
-     document.querySelector(".computer-number").style.display = "flex";
+    // facciamo corrispondere il numero random generato dal computer al numero da visualizzare
+    document.querySelector("#computerOutput img").src = `./img/${computerNumber}.jpg`;
 
     
     alert("Il computer ha scelto il numero: " + computerNumber);
