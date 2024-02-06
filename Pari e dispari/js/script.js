@@ -22,7 +22,17 @@ function scegliPariODispari() {
 
 // creiamo una funzione per far scegliere all'utente, tramite prompt, un numero da 1 a 5
 function inserisciNumero() {
-    let number = parseInt(prompt("Scegli un numero da 1 a 5... "));
+
+    // cambio la visualizzazione della user-number dove vengono mostrati i dadi
+    document.querySelector(".user-number").style.display = "flex";
+
+    // cambio la visualizzazione della computer-number dove vengono mostrati i dadi
+    document.querySelector(".computer-number").style.display = "flex";
+
+    const number = parseInt(prompt("Scegli un numero da 1 a 5... "));
+
+    // facciamo corrispondere il numero scelto dell'utente all'immagine
+    document.querySelector("#playerOutput img").src = `./img/${number}.jpg`;
 
     // controlliamo che l'utente abbia scritto un numero da 1 a 5
     while (number < 1 || number > 5 || isNaN(number)) {
@@ -63,6 +73,14 @@ function gioca() {
 
     // richiamo la funzione del numero casuale genarato dal computer
     let computerNumber = generaNumero();
+
+    // facciamo corrispondere il numero random generato al numero del dado
+    document.querySelector("#computerOutput img").src = `./img/${computerNumber}.jpg`;
+
+     // cambio la visualizzazione della computer-number dove vengono mostrati i dadi
+     document.querySelector(".computer-number").style.display = "flex";
+
+    
     alert("Il computer ha scelto il numero: " + computerNumber);
     let result = sommaPariODispari(userNumber, computerNumber);
     alert("La somma dei due numeri è: " + (userNumber + computerNumber));
