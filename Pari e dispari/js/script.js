@@ -11,6 +11,9 @@
 function scegliPariODispari() {
     let choice = prompt("Cosa scegli? PARI o DISPARI... ");
 
+    // stampiamo in pagina la scelta dell'utente
+    document.querySelector("#user-choice").innerHTML = `Hai scelto ${choice}`;
+
     // controlliamo che l'utente abbia scritto pari o dispari
     while (choice !== 'pari' && choice !== 'dispari') {
 
@@ -86,8 +89,15 @@ function gioca() {
     alert("La somma dei due numeri è: " + (userNumber + computerNumber));
     if (result === userChoice) {
         alert(`Poichè hai scelto "${userChoice}" Hai vinto!`);
+
+        // stampiamo in pagina il risultato
+        document.querySelector("#result-game").innerHTML = `Hai vinto!`;
+
     } else {
         alert(`Poichè hai scelto "${userChoice}" Hai perso!`);
+
+        // stampiamo in pagina il risultato
+        document.querySelector("#result-game").innerHTML = `Hai perso!`;
     }
 }
 

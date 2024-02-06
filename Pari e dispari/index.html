@@ -9,16 +9,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid col-3">
+    <div class="container-fluid col-10">
         <h1 class="mt-5 bg-dark-subtle text-center p-3 fs-3">Pari e dispari</h1>
-        <div id="playerOutput" class="d-flex flex-column align-items-center">
-            <h1 class="pb-3">Numero Utente</h1> 
-            <img style="display: none;" class="user-number" src="" alt="numero dado">
+        <span id="user-choice" class="display-3 bg-warning py-3 d-flex justify-content-center"></span>
+        <div class="d-flex gap-5">
+            <div id="playerOutput" class="col-6 d-flex flex-column align-items-center">
+                <h1 class="pb-3">Numero Utente</h1> 
+                <img style="display: none;" class="user-number" src="" alt="numero dado">
+            </div>
+            <div id="computerOutput" class="col-6 d-flex flex-column align-items-center">
+                <h1 class="pb-3">Numero Computer</h1> 
+                <img style="display: none;" class="computer-number" src="" alt="numero dado">
+            </div>
         </div>
-        <div id="computerOutput" class="d-flex flex-column align-items-center">
-            <h1 class="pb-3">Numero Computer</h1> 
-            <img style="display: none;" class="computer-number" src="" alt="numero dado">
-        </div>
+        <span id="result-game" class="display-3 bg-info py-3 d-flex justify-content-center"></span>
     </div>
 
     <!-- script bootstrap -->
